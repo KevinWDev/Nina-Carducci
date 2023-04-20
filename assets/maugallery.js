@@ -51,6 +51,7 @@
   $.fn.mauGallery.listeners = function(options) {
     $(".gallery-item").on("click", function() {
       if (options.lightBox && $(this).prop("tagName") === "IMG") {
+        // Au click sa ouvre la modal
         $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
       } else {
         return;
@@ -58,10 +59,12 @@
     });
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
-    $(".gallery").on("click", ".mg-prev", () =>
+    $(".gallery").on("click", ".mg-prev", () => 
+      // Btn qui permet de switch à gauche 
       $.fn.mauGallery.methods.prevImage(options.lightboxId)
     );
     $(".gallery").on("click", ".mg-next", () =>
+      // Btn qui permet de switch à droite
       $.fn.mauGallery.methods.nextImage(options.lightboxId)
     );
   };
