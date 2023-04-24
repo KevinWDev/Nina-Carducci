@@ -246,17 +246,17 @@
                 </div>
             </div>`);
     },
-    showItemTags(gallery, position, tags) {
+    showItemTags(gallery, position, tags, teste) {
       var tagItems =
-        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
+        '<li class="nav-item"><span type="button" class="nav-link active active-tag" tabindex="0" data-images-toggle="all">Tous</span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
-                <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
+                <span type="button" class="nav-link" tabindex="0"  data-images-toggle="${value}">${value}</span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
       if (position === "bottom") {
-        gallery.append(tagsRow);
+        gallery.append(tagsRow);  
       } else if (position === "top") {
         gallery.prepend(tagsRow);
       } else {
@@ -287,6 +287,6 @@
             .show(300);
         }
       });
-    }
+    }   
   };
 })(jQuery);
