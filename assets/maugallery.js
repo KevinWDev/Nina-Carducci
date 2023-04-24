@@ -59,7 +59,7 @@
     });
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
-    $(".gallery").on("click", ".mg-prev", () => 
+    $(".gallery").on("click", ".mg-prev", () =>
       // Btn qui permet de switch à gauche 
       $.fn.mauGallery.methods.prevImage(options.lightboxId)
     );
@@ -135,6 +135,7 @@
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img"));
+          // console.log(imagesCollection);
           }
         });
       } else {
@@ -152,14 +153,34 @@
         next = null;
 
       $(imagesCollection).each(function(i) {
+        // console.log(imagesCollection);
+
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
+          // console.log(i)
+            console.log(imagesCollection[index]);
+          
+
         }
       });
+      // next =
+      //   imagesCollection[index] ||
+      //   // console.log(imagesCollection[index]);
+      //   imagesCollection[imagesCollection.length - 1];
+      //   console.log(imagesCollection.length -1)
+
+      // $(".lightboxImage").attr("src", $(next).attr("src"));
+      
+
+      // Code modifié
       next =
         imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+        console.log(imagesCollection[index]);
+        imagesCollection[imagesCollection[index -1]];
+        console.log(imagesCollection[index -1]);
+        
+      $(".lightboxImage").attr("src", $(imagesCollection[index -1]).attr("src"));
+
     },
     nextImage() {
       let activeImage = null;
@@ -195,8 +216,12 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      // next = imagesCollection[index] || imagesCollection[0];
+      // $(".lightboxImage").attr("src", $(next).attr("src"));
+
+      // Code Modifié
+      next = imagesCollection[index] || imagesCollection[index +1];
+      $(".lightboxImage").attr("src", $(imagesCollection[index +1]).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
@@ -243,7 +268,8 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      // Ajout de la classe active pour le fonctionnement "style" des catégories
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
