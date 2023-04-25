@@ -51,7 +51,6 @@
   $.fn.mauGallery.listeners = function(options) {
     $(".gallery-item").on("click", function() {
       if (options.lightBox && $(this).prop("tagName") === "IMG") {
-        // Au click sa ouvre la modal
         $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
       } else {
         return;
@@ -60,11 +59,9 @@
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
-      // Btn qui permet de switch à gauche 
       $.fn.mauGallery.methods.prevImage(options.lightboxId)
     );
     $(".gallery").on("click", ".mg-next", () =>
-      // Btn qui permet de switch à droite
       $.fn.mauGallery.methods.nextImage(options.lightboxId)
     );
   };
@@ -135,7 +132,6 @@
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img"));
-          // console.log(imagesCollection);
           }
         });
       } else {
@@ -153,26 +149,13 @@
         next = null;
 
       $(imagesCollection).each(function(i) {
-        // console.log(imagesCollection);
 
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
-          // console.log(i)
-            console.log(imagesCollection[index]);
           
-
         }
       });
-      // next =
-      //   imagesCollection[index] ||
-      //   // console.log(imagesCollection[index]);
-      //   imagesCollection[imagesCollection.length - 1];
-      //   console.log(imagesCollection.length -1)
-
-      // $(".lightboxImage").attr("src", $(next).attr("src"));
       
-
-      // Code modifié
       next =
         imagesCollection[index] ||
         console.log(imagesCollection[index]);
@@ -216,10 +199,7 @@
           index = i;
         }
       });
-      // next = imagesCollection[index] || imagesCollection[0];
-      // $(".lightboxImage").attr("src", $(next).attr("src"));
 
-      // Code Modifié
       next = imagesCollection[index] || imagesCollection[index +1];
       $(".lightboxImage").attr("src", $(imagesCollection[index +1]).attr("src"));
     },
@@ -268,7 +248,6 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      // Ajout de la classe active pour le fonctionnement "style" des catégories
       $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");

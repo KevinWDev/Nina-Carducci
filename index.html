@@ -22,22 +22,62 @@
 	<meta name="twitter:site" content="https://kevinwdev.github.io/Nina-Carducci/">
 	<meta name="twitter:title" content="Nina Carducci">
 	<meta name="twitter:description" content="Photographe disponible pour vos shooting photo">
-	<meta name="twitter:image" content="https://raw.githubusercontent.com/KevinWDev/Nina-Carducci/master/assets/images/ninaReseaux.png">
+	<meta name="twitter:image"
+		content="https://kevinwdev.github.io/Nina-Carducci/assets/images/nina.png">
 	<meta name="twitter:creator" content="Nina Carducci">
 
-	<title>Photographe - Nina Carducci</title>
-	<meta name="description" content="Page d'accueil de Nina Carducci. Photographe professionnelle qui capture vos
-	moments d'émotions, afin de les rendre immortles ! Portraits, Mariage et événements.">
+	<title>Photographe passionnée - Bordeaux - Nina Carducci</title>
+	<meta name="description" content="Page d'accueil de Nina Carducci. Photographe professionnelle situé à Bordeaux qui capture vos
+	moments d'émotions, afin de les rendre immortels ! Portraits, Mariage et événements.">
 
 	<!-- Balise meta Facebook -->
-	<meta property="og:image" content="./assets/images/nina.png">
+	<meta property="og:image"
+		content="https://kevinwdev.github.io/Nina-Carducci/assets/images/nina.png">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="Page d'accueil de Nina Carducci. Photographe professionnelle qui capture vos
 	moments d'émotions, afin de les rendre immortles ! Portraits, Mariage et événements.">
 	<meta property="og:title" content="Nina Carducci">
-	<meta property="og:url" content="https://raw.githubusercontent.com/KevinWDev/Nina-Carducci/master/assets/images/ninaReseaux.png">
+	<meta property="og:url" content="https://kevinwdev.github.io/Nina-Carducci/">
 	<meta property="og:author" content="Nina Carducci">
+
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "LocalBusiness",
+		  "address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Bordeaux",
+			"addressRegion": "Gironde",
+			"streetAddress": "68 avenue Alsace-Lorraine"
+		  },
+		  "description": "Photographe passionnée qui capture vos moments d'émotions et les rends immortels ! Portraits, Mariage, événements.",
+		  "name": "Nina Carducci",
+		  "image": "https://kevinwdev.github.io/Nina-Carducci/assets/images/nina.png",
+		  "telephone": "+33556677889",
+		  "priceRange": "$$",
+		  "url": "https://kevinwdev.github.io/Nina-Carducci/",
+
+		  "openingHoursSpecification": [
+			{
+      			"@type": "OpeningHoursSpecification",
+      
+      				"dayOfWeek": [
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday"
+	  				],
+      				"opens":  "10:00:00",
+	  				"closes":  "19:00:00"
+				}
+			]
+		}
+		</script>
+
 </head>
+
+
 
 <body>
 	<header class="top-header">
@@ -82,24 +122,25 @@
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
 					data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="carousel-control-prev-icon" aria-hidden="true" aria-label="Previous"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
 				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
 					data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="carousel-control-next-icon" aria-hidden="true" aria-label="Next"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
 		</div>
-		<section id="about" itemscope itemtype="https://schema.org/AboutPage">
+		<section id="about">
 			<div class="picture left">
-				<img itemprop="image" src="./assets/images/nina.png" width="555" height="553" alt="Phot de Nina Carducci"
-					title="Nina Carducci">
+				<img src="./assets/images/nina.png" width="555" height="553"
+					alt="Phot de Nina Carducci" title="Nina Carducci">
 			</div>
-			<div id="about-me">
-				<h2 class="about-me__title">A propos de moi</h2>
-				<h3 class="about-me__introduction" itemprop="description">Devenir photographe était pour moi une évidence. Comme si j’y étais
+			<div id="about-me" itemscope itemprop="https://schema.org/about">
+				<h2 class="about-me__title" itemprop="about">A propos de moi</h2>
+				<h3 class="about-me__introduction">Devenir photographe était pour moi une
+					évidence. Comme si j’y étais
 					prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre
 					immortels, voilà ce qui me fait vibrer.</h3>
 				<p>Nous passons notre vie à chercher le bonheur, et lorsque nous y touchons, nous n’avons qu’une envie :
@@ -155,8 +196,8 @@
 				</figure>
 			</div>
 		</section>
-		<section id="services">
-			<h2 class="title">Mes services</h2>
+		<section id="services" itemscope itemprop="https://schema.org/offers">
+			<h2 class="title" itemprop="name">Mes services</h2>
 			<div class="container">
 				<div class="service">
 					<div class="service__description">
@@ -165,30 +206,30 @@
 							en Île-de-France pour réaliser vos photos</p>
 					</div>
 					<div class="service__price">
-						<h4>350€/demi journée</h4>
+						<h4 itemprop="price">350€/demi journée</h4>
 						<span>Matériel, déplacement inclus</span>
 					</div>
 
 				</div>
 				<div class="service">
 					<div class="service__description">
-						<h3>Retouches</h3>
+						<h3 itemprop="name">Retouches</h3>
 						<p>Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu
 							optimal pour vos publications</p>
 					</div>
 					<div class="service__price">
-						<h4>50€/photo</h4>
+						<h4 itemprop="price">50€/photo</h4>
 						<span>2 AR par photo</span>
 					</div>
 				</div>
 				<div class="service">
 					<div class="service__description">
-						<h3>Album photos</h3>
+						<h3 itemprop="name">Album photos</h3>
 						<p>Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers
 							un album photo personnalisé</p>
 					</div>
 					<div class="service__price">
-						<h4>400€ album A4</h4>
+						<h4 itemprop="price">400€ album A4</h4>
 						<span>30 pages recto/verso</span>
 					</div>
 				</div>
@@ -224,7 +265,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 </body>
 
 </html>
